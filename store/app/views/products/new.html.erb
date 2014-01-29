@@ -1,0 +1,20 @@
+<h1>Enter New Product</h1>
+
+<%= form_for @product do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	</br>
+	<div class="container check_field">
+	<div class="row">
+	<% @categories.each do |category| %>
+		<div class="col-cs-6 col-sm-4 col-md-3 col-lg-2">
+		<%= check_box_tag 'checked[]', category.id %>
+		<%= label_tag category.name %>
+		</div>
+		
+	<% end %>
+	</div>
+
+	<%= f.submit "Submit"%>
+<% end %>
+</div>

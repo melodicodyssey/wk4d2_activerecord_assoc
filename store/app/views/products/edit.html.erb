@@ -1,0 +1,28 @@
+<h1>Edit Product</h1>
+
+<%= form_for @product, url: product_update_path(@product.id), method: :put do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name, value: @product.name %>
+	<%= f.label :price %>
+	<%= f.text_field :price, value: @product.price %>
+	</br>
+	<div class="container check_field">
+	<div class="row">
+	<% @categories.each do |category| %>
+		<div class="col-cs-6 col-sm-4 col-md-3 col-lg-2">
+		<% if @product.categories.include?(category) %>
+			<%= check_box_tag 'checked[]', category.id, :active %>
+			<%= label_tag category.name %>
+		<% else %>
+			<%= check_box_tag 'checked[]', category.id %>
+			<%= label_tag category.name %>
+		<% end %>
+		</div>
+		</br>
+	<% end %>
+	</div>
+
+	<%= f.submit "Submit"%>
+<% end %>
+	</div>
+

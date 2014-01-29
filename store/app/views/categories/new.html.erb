@@ -3,5 +3,12 @@
 <%= form_for @category do |f| %>
 	<%= f.label :name %>
 	<%= f.text_field :name %>
+	</br>
+	<% @products.each do |product| %>
+		<%= check_box_tag 'checked[]', product.id %>
+		<%= label_tag product.name %>
+		</br>
+	<% end %>
+
 	<%= f.submit "Submit"%>
 <% end %>
