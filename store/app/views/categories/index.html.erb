@@ -1,0 +1,10 @@
+<h1>Categories</h1>
+
+<% @categories.each do |category| %>
+	<%= link_to category.name, category_path(category) %>
+	</br>
+<% end %>
+
+<%= form_tag (new_category_path), method: "get" do %>
+	<%= submit_tag "Add New Category" %>
+<% end %>

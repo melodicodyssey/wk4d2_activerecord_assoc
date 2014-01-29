@@ -1,0 +1,6 @@
+<h1><%=@category.name%></h1>
+
+<% @category.products.each do |product| %>
+	<%= product.name %> - <%= product.price %>
+	</br>
+<% end %>
