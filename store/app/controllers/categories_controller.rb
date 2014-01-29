@@ -10,14 +10,8 @@ class CategoriesController < ApplicationController
   end
 
   def create
-	new_cat = Category.create(category_params)
-	selected = params[:checked]
-	selected.each do |id|
-		# REFACTOR THIS
-		new_cat.products << Product.find(id.to_i)
-	end
-	binding.pry
-	redirect_to category_path(new_cat)
+	new_cat = Category.create_new(category_params, params[:checked])
+	redirect_to category_path(new_cat.id)
   end
 
   def show
@@ -30,13 +24,8 @@ class CategoriesController < ApplicationController
   end
 
   def update
-	Category.destroy(category_params)
-	updated_cat = Category.create(category_params)
-	selected = params[:checked]
-	selected.each do |id|
-		updated_cat.products << Product.find(id.to_i)
-	end
-	redirect_to category_path(updated_cat)	
+	up_cat = Category.update(category_params, params[:checked])
+	redirect_to category_path(up_cat.id)	
   end
 
   def destroy
@@ -49,5 +38,6 @@ class CategoriesController < ApplicationController
 
   def category_params
   	params.require(:category).permit(:name)
+  end
 
 end

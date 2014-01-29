@@ -1,3 +1,48 @@
-body {
-	background-image: url('/images/skyrim.jpg');
+.navbar {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.body {
+	background-image: url('skyrim.jpg');
+	opacity: 0.6;
+	background-attachment: fixed;
+	font-family: 'MedievalSharp', cursive;
+}
+
+h1 {
+	font-family: 'MedievalSharp', cursive;
+	color: black;
+	font-size: 50px;
+}
+
+h2 {
+	font-family: 'MedievalSharp', cursive;
+	color: black;
+}
+
+h5 {
+	font-family: 'MedievalSharp', cursive;
+	color: black;
+}
+
+.check_field {
+	background-color: white;
+	background-opacity: 0.5;
+	width: 500px;
+	border-radius: 15px;
+	font-weight: bold;
+	padding: 10px;
+	margin: 10px;
+}
+
+.text {
+	opacity: 1;
+	color: black;
+}
+
+@media (max-width: 780px) {
+	.check_field {
+		width: 250px;
+	}
 }

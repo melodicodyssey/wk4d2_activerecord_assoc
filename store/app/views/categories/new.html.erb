@@ -1,14 +1,16 @@
-<h1>Enter New Category</h1>
+<h2>Enter New Category</h2>
 
 <%= form_for @category do |f| %>
 	<%= f.label :name %>
 	<%= f.text_field :name %>
 	</br>
+	<%= f.submit "Submit"%></br></br>
+	<div class="container check_field">
 	<% @products.each do |product| %>
 		<%= check_box_tag 'checked[]', product.id %>
 		<%= label_tag product.name %>
 		</br>
 	<% end %>
+</div>
 
-	<%= f.submit "Submit"%>
 <% end %>

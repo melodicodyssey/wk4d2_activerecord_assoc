@@ -1,15 +1,15 @@
-<h1>Edit Product</h1>
+<h2>Edit Product</h2>
 
 <%= form_for @product, url: product_update_path(@product.id), method: :put do |f| %>
 	<%= f.label :name %>
 	<%= f.text_field :name, value: @product.name %>
 	<%= f.label :price %>
 	<%= f.text_field :price, value: @product.price %>
-	</br>
+	</br></br>
 	<div class="container check_field">
 	<div class="row">
 	<% @categories.each do |category| %>
-		<div class="col-cs-6 col-sm-4 col-md-3 col-lg-2">
+		<!-- <div class="col-cs-6 col-sm-4 col-md-3 col-lg-2"> -->
 		<% if @product.categories.include?(category) %>
 			<%= check_box_tag 'checked[]', category.id, :active %>
 			<%= label_tag category.name %>
@@ -17,7 +17,7 @@
 			<%= check_box_tag 'checked[]', category.id %>
 			<%= label_tag category.name %>
 		<% end %>
-		</div>
+		<!-- </div> -->
 		</br>
 	<% end %>
 	</div>

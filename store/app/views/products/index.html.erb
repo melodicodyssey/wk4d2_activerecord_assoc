@@ -1,10 +1,12 @@
-<h1>Products</h1>
-
-<% @products.each do |product| %>
-	<%= link_to product.name, product_path(product) %>
-	</br>
-<% end %>
+<h2>Products</h2>
 
 <%= form_tag (new_product_path), method: "get" do %>
 	<%= submit_tag "Add New Category" %>
 <% end %>
+</br></br>
+<div class="container check_field">
+<% @products.each do |product| %>
+	<%= link_to product.name, product_path(product) %>
+	</br>
+<% end %>
+</div>

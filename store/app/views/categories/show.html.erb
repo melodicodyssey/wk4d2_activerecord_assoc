@@ -1,4 +1,4 @@
-<h1><%=@category.name%></h1>
+<h2><%=@category.name%></h2>
 
 
 <%= button_to "Delete", category_delete_path(@category.id), method: :delete %>
@@ -6,7 +6,9 @@
 
 
 <!-- Relevant products list -->
+<div class="container check_field">
 <% @category.products.each do |product| %>
 	<a href="/products/<%=product.id%>"><%= product.name %> - <%= product.price %></a>
 	</br>
 <% end %>
+</div>

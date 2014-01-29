@@ -5,15 +5,37 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <!-- <link rel="stylesheet", type="text/css" href="/images/skyrim.jpg"> -->
+  <link rel="stylesheet", type="text/css" href="/stylesheets/store.css">
+  <link href='http://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body class="body">
 
+<div class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+   		<a class="navbar-brand" href="<%=categories_path%>">RAGNAR'S</a>
+   	</div>
+   	<div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+            	<li><a href="<%=categories_path%>">Categories</a></li>
+            	<li><a href="<%=products_path%>">Products</a></li>
+
+              </ul>
+            </li>
+        </ul>
+   </div>
+</div>
+
+<center>
 <a href=<%=categories_path%> >Categories</a>
 <a href=<%=products_path%> >Products</a>
 
+	<h1>Ragnar's Smithing</h1>
+	<h5><em>"The finest weapons and armor!"</em></h5>
 
 <%= yield %>
-
+</center>
 </body>
 </html>
