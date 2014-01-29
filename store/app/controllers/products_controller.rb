@@ -10,12 +10,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # new_prod = Product.create(product_params)
-    # selected = params[:checked]
-    # selected.each do |id|
-    #   # REFACTOR THIS?
-    #   new_prod.categories << Category.find(id.to_i)
-    # end
     Product.create_new(product_params, params[:checked])
     redirect_to product_path(new_prod)
   end
@@ -30,14 +24,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    # id = params[:id]
-    # param = product_params    
-    # Product.destroy(id)
-    # updated_prod = Product.create(param)
-    # selected = params[:checked]
-    # selected.each do |id|
-    #   updated_prod.categories << Category.find(id.to_i)
-    # end
     Product.update(product_params, params[:checked])
     redirect_to product_path(updated_prod)  
   end
